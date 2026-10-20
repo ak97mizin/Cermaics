@@ -2,288 +2,258 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Керамика ручной работы</title>
-<meta name="description" content="Авторская керамика ручной работы: вазы, блюда, скульптура. Каждая работа в единственном экземпляре.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>M Ceramics — керамика ручной работы</title>
+<meta name="description" content="Авторская керамика ручной работы: вазы, блюда, скульптура, панно. Каждая работа в единственном экземпляре.">
+<meta name="theme-color" content="#F3DDD0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&amp;family=Golos+Text:wght@400;500;600&amp;display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#FFFFFF}
-a{color:#22201E}a:hover{color:#A8603F}
+:root{--ink:#22201E;--muted:#5B4238;--accent:#6E3520;--title:#8A4329;--display:"Unbounded","Arial Black",system-ui,sans-serif;--body:"Golos Text","Segoe UI",system-ui,-apple-system,sans-serif;--gut:clamp(12px,1.6vw,24px)}
 *{box-sizing:border-box}
-img{display:block;max-width:100%}
 html{scroll-behavior:smooth}
-.wrap{max-width:1440px;margin:0 auto;padding-left:clamp(16px,3.5vw,48px);padding-right:clamp(16px,3.5vw,48px)}
-.cols{display:flex;flex-wrap:wrap;gap:32px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:56px 24px}
-.card-img{aspect-ratio:4/5;overflow:hidden;background:#F4F1EE}
-.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
-.card:hover .card-img img{transform:scale(1.035)}
-.btn{display:inline-flex;align-items:center;gap:14px;min-height:48px;padding:0 22px;text-decoration:none;font-size:15px;font-weight:500;transition:background .25s,color .25s,border-color .25s}
-.btn-line{border:1px solid #22201E;color:#22201E}
-.btn-line:hover{background:#22201E;color:#FFFFFF}
-.btn-fill{background:#A8603F;color:#FFFFFF;border:1px solid #A8603F}
-.btn-fill:hover{background:#8E4F33;color:#FFFFFF;border-color:#8E4F33}
-.navlink{text-decoration:none;font-size:14px;color:#22201E}
-.order-link{text-decoration:none;font-size:14px;font-weight:500;color:#A8603F;border-bottom:1px solid #D9A68C;padding-bottom:2px;min-height:24px}
-.order-link:hover{color:#22201E;border-color:#22201E}
-@media (max-width:760px){
-.nav-links{display:none}
-}
+body{margin:0;background:#F3DDD0}
+a{color:inherit}a:hover{color:#6E3520}
+img{display:block;max-width:100%;height:auto}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:500;line-height:1.1;text-wrap:balance}
+h2{font:500 clamp(30px,4.4vw,60px)/1.05 var(--display);letter-spacing:-.035em}
+.site{position:relative;overflow:hidden;color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;background:radial-gradient(55% 35% at 100% 0%,rgba(255,250,246,.65),rgba(255,250,246,0) 70%),radial-gradient(45% 30% at 0% 55%,rgba(255,250,246,.35),rgba(255,250,246,0) 70%),linear-gradient(174deg,#F7E8DF 0%,#F1D8C9 28%,#EBC8B4 62%,#E3B59C 100%)}
+.site::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:url(images/grain.png);opacity:.4;mix-blend-mode:overlay}
+.site>*{position:relative;z-index:1}
+.wrap{padding-inline:var(--gut)}
+section{padding-block:clamp(64px,8vw,120px)}
+.glass{background:rgba(255,250,246,.38);border-radius:12px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.top .wrap{display:flex;align-items:center;gap:28px;min-height:72px}
+.brand{font:500 15px/1 var(--display);text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+.nav{display:flex;gap:28px;margin-left:auto;font-size:15px}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.hero{padding-block:clamp(24px,4vw,56px) clamp(56px,7vw,100px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.hero h1{margin-top:clamp(18px,2vw,28px);font:500 clamp(48px,7.4vw,124px)/.92 var(--display);letter-spacing:-.05em;color:var(--title)}
+.comp{display:flex;flex-wrap:wrap;column-gap:.5em;margin-top:clamp(22px,2.6vw,36px);font-size:clamp(17px,1.7vw,22px)}
+.comp span::after{content:"."}
+.lead{margin-top:18px;max-width:44ch;color:var(--muted);font-size:clamp(16px,1.3vw,18px)}
+.art{max-width:560px;width:100%;justify-self:end}
+.art svg{display:block;width:100%;height:auto}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,4vw,56px)}
+.head p{max-width:42ch;color:var(--muted);font-size:16px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(32px,3.5vw,52px) clamp(12px,1.4vw,20px)}
+.pc{display:grid;gap:10px;align-content:start}
+.pc .im{overflow:hidden;border-radius:10px;aspect-ratio:4/5;background:rgba(255,250,246,.4)}
+.pc .im img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.pc:hover .im img{transform:scale(1.04)}
+.meta{display:flex;justify-content:space-between;gap:12px;margin-top:6px;font-size:13px;color:var(--muted)}
+.meta .n{color:var(--accent);font-weight:600}
+.pc .t{font:500 clamp(17px,1.4vw,20px)/1.2 var(--display);letter-spacing:-.02em}
+.pc .s{font-size:15px;color:var(--muted);line-height:1.45}
+.buy{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px}
+.price{font:500 clamp(18px,1.5vw,21px)/1 var(--display);letter-spacing:-.02em}
+.pill{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:40px;text-decoration:none;font-size:15px;font-weight:500;background:rgba(255,250,246,.6);color:var(--ink);transition:background .25s,color .25s}
+.pill:hover{background:var(--ink);color:#FBF3EE}
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,4vw,64px);align-items:center}
+.about .txt{display:grid;gap:22px;align-content:start}
+.about .big{font-size:clamp(22px,2.2vw,30px);line-height:1.3;letter-spacing:-.01em}
+.about .txt p:not(.big){color:var(--muted)}
+.about img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}
+.advg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:clamp(32px,4vw,56px)}
+.advg>div{padding:clamp(20px,2.2vw,30px);display:grid;gap:12px;align-content:start}
+.advg h3,.steps h3{font:500 clamp(18px,1.6vw,22px)/1.2 var(--display);letter-spacing:-.02em}
+.advg p,.steps p{color:var(--muted);font-size:16px}
+.value-lead{margin-top:20px;max-width:56ch;color:var(--muted);font-size:clamp(16px,1.3vw,18px)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(32px,4vw,56px)}
+.steps>div{padding:clamp(20px,2.2vw,30px);display:grid;gap:14px;align-content:start}
+.steps .num{font:500 26px/1 var(--display);letter-spacing:-.02em;color:var(--accent);margin-bottom:clamp(20px,3vw,40px)}
+.contact h2{font-size:clamp(36px,6vw,88px);max-width:16ch}
+.contact .lead{margin-top:22px;font-size:clamp(18px,1.8vw,21px);max-width:46ch}
+.ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:clamp(36px,5vw,64px)}
+.ways>div{padding:20px 22px;min-width:0}
+.ways small{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.ways .v{font-size:clamp(17px,1.7vw,21px);font-weight:500;text-decoration:none;overflow-wrap:anywhere}
+.btn{display:inline-flex;align-items:center;gap:10px;margin-top:36px;text-decoration:none;font:500 16px/1 var(--body);padding:17px 26px;border-radius:40px;background:var(--ink);color:#FBF3EE;transition:background .25s}
+.btn:hover{background:#6E3520;color:#FBF3EE}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:clamp(64px,8vw,112px);padding-top:20px;border-top:1px solid rgba(34,32,30,.18);font-size:14px;color:var(--muted)}
+@media (max-width:1100px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.advg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.hero-grid,.about{grid-template-columns:1fr}.art{justify-self:center;max-width:420px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.steps,.ways{grid-template-columns:1fr}.nav{display:none}}
+@media (max-width:520px){.grid,.advg{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div style="font-family: 'Inter Tight', system-ui, sans-serif; color: #22201E; background: #FFFFFF; overflow: hidden">
+<div class="site">
 
-<!-- Шапка -->
-<header class="wrap" style="display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 28px; padding-bottom: 28px">
-<a href="#top" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #22201E">
-<svg width="22" height="26" viewBox="0 0 22 26" fill="none" aria-hidden="true"><path d="M7 1.5h8M8 1.5c0 3-6 5.5-6 12.5 0 6 4 10.5 9 10.5s9-4.5 9-10.5c0-7-6-9.5-6-12.5" stroke="#A8603F" stroke-width="1.6" stroke-linecap="round"></path></svg>
-<span style="font-size: 15px; font-weight: 500; letter-spacing: -0.01em">керамика ручной работы</span>
-</a>
-<nav class="nav-links" style="display: flex; gap: 36px" aria-label="Разделы">
-<a class="navlink" href="#works">Работы</a>
-<a class="navlink" href="#about">О мастерской</a>
-<a class="navlink" href="#order">Как заказать</a>
+<header class="top">
+<div class="wrap">
+<a class="brand" href="#top">M Ceramics</a>
+<nav class="nav" aria-label="Разделы">
+<a href="#works">Работы</a>
+<a href="#about">О мастерской</a>
+<a href="#order">Как заказать</a>
+<a href="#contacts">Контакты</a>
 </nav>
-<a class="navlink" href="#contacts" style="font-weight: 500">Связаться</a>
+</div>
 </header>
 
-<!-- Первый экран -->
-<section id="top" class="wrap hero" style="padding-bottom: 96px">
-<div class="cols" style="justify-content: space-between; align-items: center; gap: 48px; margin-top: 40px">
-<div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 32px">
-<div style="display: flex; align-items: center; gap: 14px; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E6A65"><span style="width: 40px; height: 1px; background: #A8603F"></span><span>Авторская керамика</span></div>
-<h1 style="margin: 0; font-size: clamp(40px, 6.2vw, 96px); font-weight: 600; letter-spacing: -0.04em; line-height: .92; text-transform: uppercase; color: #A8603F">Название мастерской</h1>
-<p style="margin: 0; max-width: 420px; font-size: 17px; line-height: 1.55; color: #4A4643">Авторская керамика ручной работы. Каждая вещь вылеплена вручную, покрыта глазурью и существует в единственном экземпляре.</p>
-<div><a class="btn btn-line" href="#works">Смотреть работы <span aria-hidden="true">+</span></a></div>
+<main id="top">
+
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<div class="eyebrow">Авторская керамика ручной работы</div>
+<h1>M Ceramics</h1>
+<div class="comp"><span>Вазы</span><span>Блюда</span><span>Скульптура</span><span>Панно</span></div>
+<p class="lead">Каждая вещь вылеплена вручную, покрыта глазурью и существует в единственном экземпляре.</p>
 </div>
-<div style="flex: 1 1 380px; max-width: 540px; margin-left: auto; margin-right: auto">
-<svg viewBox="0 0 520 540" width="100%" aria-hidden="true" style="display: block">
-<circle cx="262" cy="270" r="236" fill="none" stroke="#EADFD7" stroke-width="1"></circle>
-<circle cx="118" cy="128" r="46" fill="#F4E7DF"></circle>
-<path d="M318 70h28v36c0 18 50 40 50 120c0 90-22 190-26 230h-76c-4-40-26-140-26-230c0-80 50-102 50-120z" fill="#EBD6CA"></path>
-<rect x="312" y="64" width="40" height="8" rx="4" fill="#E2C6B6"></rect>
-<path d="M282 300c30 6 70 6 104 0M276 340c34 6 76 6 112 0" fill="none" stroke="#E0C3B3" stroke-width="1.2"></path>
-<line x1="40" y1="504" x2="484" y2="504" stroke="#DDD5CE" stroke-width="1"></line>
-<ellipse cx="200" cy="474" rx="92" ry="8" fill="#F1E6DF"></ellipse>
-<path d="M178 230h44v18c50 14 82 60 82 116c0 64-46 106-104 106c-58 0-104-42-104-106c0-56 32-102 82-116z" fill="#C47A5A"></path>
-<rect x="170" y="223" width="60" height="10" rx="5" fill="#B56C4E"></rect>
-<path d="M110 330c24 12 156 12 180 0" fill="none" stroke="#B56C4E" stroke-width="1.4"></path>
-<g fill="#9E5A3E"><circle cx="150" cy="380" r="1.6"></circle><circle cx="176" cy="412" r="1.2"></circle><circle cx="232" cy="392" r="1.8"></circle><circle cx="262" cy="420" r="1.2"></circle><circle cx="204" cy="440" r="1.4"></circle><circle cx="128" cy="414" r="1.1"></circle><circle cx="270" cy="372" r="1.3"></circle><circle cx="196" cy="368" r="1"></circle></g>
-<ellipse cx="386" cy="502" rx="88" ry="6" fill="#EFE3DB"></ellipse>
-<path d="M300 430h172c0 40-38 70-86 70c-48 0-86-30-86-70z" fill="#D9A68C"></path>
-<ellipse cx="386" cy="430" rx="86" ry="11" fill="#E8C4B2"></ellipse>
-<ellipse cx="386" cy="431" rx="64" ry="6" fill="#D9A68C"></ellipse>
+<div class="art">
+<svg viewBox="0 0 520 540" aria-hidden="true">
+<circle cx="262" cy="270" r="236" fill="none" stroke="rgba(90,40,22,.25)" stroke-width="1"></circle>
+<circle cx="118" cy="128" r="46" fill="rgba(255,250,246,.55)"></circle>
+<path d="M318 70h28v36c0 18 50 40 50 120c0 90-22 190-26 230h-76c-4-40-26-140-26-230c0-80 50-102 50-120z" fill="#C98B6B"></path>
+<rect x="312" y="64" width="40" height="8" rx="4" fill="#B47757"></rect>
+<path d="M282 300c30 6 70 6 104 0M276 340c34 6 76 6 112 0" fill="none" stroke="#B47757" stroke-width="1.2"></path>
+<line x1="40" y1="504" x2="484" y2="504" stroke="rgba(90,40,22,.35)" stroke-width="1"></line>
+<ellipse cx="200" cy="474" rx="92" ry="8" fill="rgba(90,40,22,.18)"></ellipse>
+<path d="M178 230h44v18c50 14 82 60 82 116c0 64-46 106-104 106c-58 0-104-42-104-106c0-56 32-102 82-116z" fill="#9E5536"></path>
+<rect x="170" y="223" width="60" height="10" rx="5" fill="#82432A"></rect>
+<path d="M110 330c24 12 156 12 180 0" fill="none" stroke="#82432A" stroke-width="1.4"></path>
+<g fill="#5E2E1A"><circle cx="150" cy="380" r="1.6"></circle><circle cx="176" cy="412" r="1.2"></circle><circle cx="232" cy="392" r="1.8"></circle><circle cx="262" cy="420" r="1.2"></circle><circle cx="204" cy="440" r="1.4"></circle><circle cx="128" cy="414" r="1.1"></circle><circle cx="270" cy="372" r="1.3"></circle><circle cx="196" cy="368" r="1"></circle></g>
+<ellipse cx="386" cy="502" rx="88" ry="6" fill="rgba(90,40,22,.18)"></ellipse>
+<path d="M300 430h172c0 40-38 70-86 70c-48 0-86-30-86-70z" fill="#6B4535"></path>
+<ellipse cx="386" cy="430" rx="86" ry="11" fill="#8A5E4B"></ellipse>
+<ellipse cx="386" cy="431" rx="64" ry="6" fill="#5A382B"></ellipse>
 </svg>
 </div>
 </div>
 </section>
 
-<!-- О мастерской -->
-<section id="about" class="wrap" style="padding-top: 120px; padding-bottom: 0; border-top: 1px solid #ECE8E4">
-<div class="cols" style="justify-content: space-between; align-items: flex-start; gap: 48px">
-<div style="flex: 1 1 360px; max-width: 440px; display: flex; flex-direction: column; gap: 22px; padding-top: 8px">
-<span style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #A8603F">О мастерской</span>
-<p style="margin: 0; font-size: clamp(22px, 2.2vw, 30px); line-height: 1.3; letter-spacing: -0.02em; font-weight: 400">Мы не повторяем формы. Каждая работа рождается из глины, огня и времени — и остаётся единственной.</p>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A4643">Природные мотивы — лист, плод, цветок, гриб — становятся вазами, блюдами и скульптурой. Неровный край, след пальцев и живая глазурь не скрываются: в них и есть ценность ручной работы.</p>
-</div>
-<div style="flex: 1 1 480px; max-width: 760px">
-<img src="images/blyudo-list.jpg" alt="Блюдо с оттиском каштанового листа под голубой глазурью" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover">
-</div>
-</div>
-<div style="height: 120px"></div>
-</section>
-
-<!-- Работы -->
-<section id="works" style="background: #FAF8F6; padding-top: 140px; padding-bottom: 140px">
+<section id="works" style="padding-top: 0">
 <div class="wrap">
-<div class="cols" style="justify-content: space-between; align-items: flex-end; margin-bottom: 64px">
-<h2 style="margin: 0; font-size: clamp(44px, 6vw, 88px); font-weight: 600; letter-spacing: -0.05em; line-height: .95">Работы</h2>
-<p style="margin: 0; max-width: 380px; font-size: 16px; line-height: 1.6; color: #4A4643">Все предметы в наличии в одном экземпляре. Если работа уже нашла владельца, можно заказать похожую — она будет своей, не копией.</p>
+<div class="head">
+<h2>Работы</h2>
+<p>Все предметы в наличии в одном экземпляре. Если работа уже нашла владельца, можно заказать похожую — она будет своей, не копией.</p>
 </div>
-
 <div class="grid">
 
-<article class="card" style="display: flex; flex-direction: column; gap: 16px">
-<div class="card-img"><img src="images/vaza-roza.jpg" alt="Ваза «Роза»"></div>
-<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6E6A65"><span style="color: #A8603F">01</span><span>Единственный экземпляр</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-size: 20px; font-weight: 500; letter-spacing: -0.02em">Ваза «Роза»</h3>
-<span style="font-size: 14px; color: #6E6A65">Ваза с лепным бутоном</span>
-</div>
-<div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #E6E1DC">
-<span style="font-size: 18px; font-weight: 500">14 500 ₽</span>
-<a class="order-link" href="#contacts">Заказать</a>
-</div>
+<article class="pc">
+<div class="im"><img loading="lazy" src="images/vaza-roza.jpg" alt="Ваза «Роза»"></div>
+<div class="meta"><span class="n">01</span><span>Единственный экземпляр</span></div>
+<h3 class="t">Ваза «Роза»</h3>
+<p class="s">Ваза с лепным бутоном</p>
+<div class="buy"><span class="price">14 500 ₽</span><a class="pill" href="#contacts">Заказать</a></div>
 </article>
 
-<article class="card" style="display: flex; flex-direction: column; gap: 16px">
-<div class="card-img"><img src="images/vazy-kobalt.jpg" alt="Пара ваз «Кобальт»"></div>
-<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6E6A65"><span style="color: #A8603F">02</span><span>Пара, 2 предмета</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-size: 20px; font-weight: 500; letter-spacing: -0.02em">Пара ваз «Кобальт»</h3>
-<span style="font-size: 14px; color: #6E6A65">Высокая и малая вазы, кобальтовая глазурь</span>
-</div>
-<div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #E6E1DC">
-<span style="font-size: 18px; font-weight: 500">21 000 ₽</span>
-<a class="order-link" href="#contacts">Заказать</a>
-</div>
+<article class="pc">
+<div class="im"><img loading="lazy" src="images/vazy-kobalt.jpg" alt="Пара ваз «Кобальт»"></div>
+<div class="meta"><span class="n">02</span><span>Пара, 2 предмета</span></div>
+<h3 class="t">Пара ваз «Кобальт»</h3>
+<p class="s">Высокая и малая вазы, кобальтовая глазурь</p>
+<div class="buy"><span class="price">21 000 ₽</span><a class="pill" href="#contacts">Заказать</a></div>
 </article>
 
-<article class="card" style="display: flex; flex-direction: column; gap: 16px">
-<div class="card-img"><img src="images/vaza-iris.jpg" alt="Ваза «Ирис»"></div>
-<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6E6A65"><span style="color: #A8603F">03</span><span>Единственный экземпляр</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-size: 20px; font-weight: 500; letter-spacing: -0.02em">Ваза «Ирис»</h3>
-<span style="font-size: 14px; color: #6E6A65">Волнистый край, ушко сбоку</span>
-</div>
-<div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #E6E1DC">
-<span style="font-size: 18px; font-weight: 500">9 800 ₽</span>
-<a class="order-link" href="#contacts">Заказать</a>
-</div>
+<article class="pc">
+<div class="im"><img loading="lazy" src="images/vaza-iris.jpg" alt="Ваза «Ирис»"></div>
+<div class="meta"><span class="n">03</span><span>Единственный экземпляр</span></div>
+<h3 class="t">Ваза «Ирис»</h3>
+<p class="s">Волнистый край, ушко сбоку</p>
+<div class="buy"><span class="price">9 800 ₽</span><a class="pill" href="#contacts">Заказать</a></div>
 </article>
 
-<article class="card" style="display: flex; flex-direction: column; gap: 16px">
-<div class="card-img"><img src="images/blyudo-list.jpg" alt="Блюдо «Каштановый лист»"></div>
-<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6E6A65"><span style="color: #A8603F">04</span><span>Единственный экземпляр</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-size: 20px; font-weight: 500; letter-spacing: -0.02em">Блюдо «Каштановый лист»</h3>
-<span style="font-size: 14px; color: #6E6A65">Оттиск живого листа, голубая глазурь</span>
-</div>
-<div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #E6E1DC">
-<span style="font-size: 18px; font-weight: 500">7 500 ₽</span>
-<a class="order-link" href="#contacts">Заказать</a>
-</div>
+<article class="pc">
+<div class="im"><img loading="lazy" src="images/blyudo-list.jpg" alt="Блюдо «Каштановый лист»"></div>
+<div class="meta"><span class="n">04</span><span>Единственный экземпляр</span></div>
+<h3 class="t">Блюдо «Каштановый лист»</h3>
+<p class="s">Оттиск живого листа, голубая глазурь</p>
+<div class="buy"><span class="price">7 500 ₽</span><a class="pill" href="#contacts">Заказать</a></div>
 </article>
 
-<article class="card" style="display: flex; flex-direction: column; gap: 16px">
-<div class="card-img"><img src="images/skulptura-plamya.jpg" alt="Скульптура «Пламя»"></div>
-<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6E6A65"><span style="color: #A8603F">05</span><span>Единственный экземпляр</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-size: 20px; font-weight: 500; letter-spacing: -0.02em">Скульптура «Пламя»</h3>
-<span style="font-size: 14px; color: #6E6A65">Интерьерная скульптура на ножке</span>
-</div>
-<div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #E6E1DC">
-<span style="font-size: 18px; font-weight: 500">18 000 ₽</span>
-<a class="order-link" href="#contacts">Заказать</a>
-</div>
+<article class="pc">
+<div class="im"><img loading="lazy" src="images/skulptura-plamya.jpg" alt="Скульптура «Пламя»"></div>
+<div class="meta"><span class="n">05</span><span>Единственный экземпляр</span></div>
+<h3 class="t">Скульптура «Пламя»</h3>
+<p class="s">Интерьерная скульптура на ножке</p>
+<div class="buy"><span class="price">18 000 ₽</span><a class="pill" href="#contacts">Заказать</a></div>
 </article>
 
-<article class="card" style="display: flex; flex-direction: column; gap: 16px">
-<div class="card-img"><img src="images/kompoziciya-plody.jpg" alt="Композиция «Плоды»"></div>
-<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6E6A65"><span style="color: #A8603F">06</span><span>Композиция, 3 предмета</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-size: 20px; font-weight: 500; letter-spacing: -0.02em">Композиция «Плоды»</h3>
-<span style="font-size: 14px; color: #6E6A65">Ваза-груша, коробочка и светильник</span>
-</div>
-<div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #E6E1DC">
-<span style="font-size: 18px; font-weight: 500">26 000 ₽</span>
-<a class="order-link" href="#contacts">Заказать</a>
-</div>
+<article class="pc">
+<div class="im"><img loading="lazy" src="images/kompoziciya-plody.jpg" alt="Композиция «Плоды»"></div>
+<div class="meta"><span class="n">06</span><span>Композиция, 3 предмета</span></div>
+<h3 class="t">Композиция «Плоды»</h3>
+<p class="s">Ваза-груша, коробочка и светильник</p>
+<div class="buy"><span class="price">26 000 ₽</span><a class="pill" href="#contacts">Заказать</a></div>
 </article>
 
-<article class="card" style="display: flex; flex-direction: column; gap: 16px">
-<div class="card-img"><img src="images/nabor-gribnica.jpg" alt="Набор «Грибница»"></div>
-<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6E6A65"><span style="color: #A8603F">07</span><span>Набор, 6 предметов</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-size: 20px; font-weight: 500; letter-spacing: -0.02em">Набор «Грибница»</h3>
-<span style="font-size: 14px; color: #6E6A65">Чаши, подсвечник и малые формы</span>
-</div>
-<div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #E6E1DC">
-<span style="font-size: 18px; font-weight: 500">19 500 ₽</span>
-<a class="order-link" href="#contacts">Заказать</a>
-</div>
+<article class="pc">
+<div class="im"><img loading="lazy" src="images/nabor-gribnica.jpg" alt="Набор «Грибница»"></div>
+<div class="meta"><span class="n">07</span><span>Набор, 6 предметов</span></div>
+<h3 class="t">Набор «Грибница»</h3>
+<p class="s">Чаши, подсвечник и малые формы</p>
+<div class="buy"><span class="price">19 500 ₽</span><a class="pill" href="#contacts">Заказать</a></div>
 </article>
 
-<article class="card" style="display: flex; flex-direction: column; gap: 16px">
-<div class="card-img"><img src="images/panno-ulov.jpg" alt="Панно «Улов»"></div>
-<div style="display: flex; justify-content: space-between; font-size: 13px; color: #6E6A65"><span style="color: #A8603F">08</span><span>Единственный экземпляр</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px">
-<h3 style="margin: 0; font-size: 20px; font-weight: 500; letter-spacing: -0.02em">Панно «Улов»</h3>
-<span style="font-size: 14px; color: #6E6A65">Керамика на старом дереве</span>
-</div>
-<div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #E6E1DC">
-<span style="font-size: 18px; font-weight: 500">32 000 ₽</span>
-<a class="order-link" href="#contacts">Заказать</a>
-</div>
+<article class="pc">
+<div class="im"><img loading="lazy" src="images/panno-ulov.jpg" alt="Панно «Улов»"></div>
+<div class="meta"><span class="n">08</span><span>Единственный экземпляр</span></div>
+<h3 class="t">Панно «Улов»</h3>
+<p class="s">Керамика на старом дереве</p>
+<div class="buy"><span class="price">32 000 ₽</span><a class="pill" href="#contacts">Заказать</a></div>
 </article>
 
 </div>
 </div>
 </section>
 
-<!-- Акцент на работе -->
-<section class="wrap" style="padding-top: 140px; padding-bottom: 140px">
-<div class="cols" style="align-items: center; gap: clamp(40px, 6vw, 96px)">
-<div style="flex: 1 1 460px; max-width: 640px; aspect-ratio: 1 / 1; overflow: hidden; background: #F4F1EE">
-<img src="images/vazy-kobalt.jpg" alt="Две вазы с кобальтовой глазурью на льняной ткани" style="width: 100%; height: 100%; object-fit: cover">
+<section id="about">
+<div class="wrap about">
+<div class="txt">
+<div class="eyebrow">О мастерской</div>
+<p class="big">Мы не повторяем формы. Каждая работа рождается из глины, огня и времени — и остаётся единственной.</p>
+<p>Природные мотивы — лист, плод, цветок, гриб — становятся вазами, блюдами и скульптурой. Неровный край, след пальцев и живая глазурь не скрываются: в них и есть ценность ручной работы.</p>
 </div>
-<div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 28px">
-<span style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #A8603F">Почему это ценно</span>
-<h2 style="margin: 0; font-size: clamp(32px, 3.6vw, 52px); font-weight: 500; letter-spacing: -0.04em; line-height: 1.05">Вещь, которая есть только у вас</h2>
-<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A4643; max-width: 480px">Глазурь ложится по-своему в каждом обжиге: одна и та же рука не сделает двух одинаковых ваз. Поэтому мы не выпускаем серий — только отдельные работы.</p>
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 32px; padding-top: 24px; border-top: 1px solid #E6E1DC; max-width: 520px">
-<div style="display: flex; gap: 10px; font-size: 15px; line-height: 1.4"><span style="color: #A8603F" aria-hidden="true">+</span><span>Ручная лепка, без форм и гончарного тиража</span></div>
-<div style="display: flex; gap: 10px; font-size: 15px; line-height: 1.4"><span style="color: #A8603F" aria-hidden="true">+</span><span>Неповторимый рисунок глазури</span></div>
-<div style="display: flex; gap: 10px; font-size: 15px; line-height: 1.4"><span style="color: #A8603F" aria-hidden="true">+</span><span>Каждая работа в одном экземпляре</span></div>
-<div style="display: flex; gap: 10px; font-size: 15px; line-height: 1.4"><span style="color: #A8603F" aria-hidden="true">+</span><span>Бережная упаковка и доставка</span></div>
-</div>
-</div>
+<img src="images/blyudo-list.jpg" alt="Блюдо с оттиском каштанового листа под голубой глазурью">
 </div>
 </section>
 
-<!-- Как заказать -->
-<section id="order" style="background: #F6EEE9; padding-top: 120px; padding-bottom: 120px">
+<section id="value">
 <div class="wrap">
-<h2 style="margin: 0 0 64px; font-size: clamp(40px, 5vw, 72px); font-weight: 600; letter-spacing: -0.05em; line-height: .95">Как заказать</h2>
-<div class="grid" style="gap: 40px 24px">
-<div style="display: flex; flex-direction: column; gap: 14px; padding-top: 22px; border-top: 1px solid #22201E">
-<span style="font-size: 14px; color: #A8603F; font-weight: 500">01</span>
-<h3 style="margin: 0; font-size: 22px; font-weight: 500; letter-spacing: -0.02em">Выберите работу</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4643">Посмотрите коллекцию и напишите название или номер вещи, которая откликнулась.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px; padding-top: 22px; border-top: 1px solid #22201E">
-<span style="font-size: 14px; color: #A8603F; font-weight: 500">02</span>
-<h3 style="margin: 0; font-size: 22px; font-weight: 500; letter-spacing: -0.02em">Обсудите детали</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4643">Пришлём дополнительные фото и размеры, ответим на вопросы. Можно заказать работу по мотивам.</p>
-</div>
-<div style="display: flex; flex-direction: column; gap: 14px; padding-top: 22px; border-top: 1px solid #22201E">
-<span style="font-size: 14px; color: #A8603F; font-weight: 500">03</span>
-<h3 style="margin: 0; font-size: 22px; font-weight: 500; letter-spacing: -0.02em">Получите заказ</h3>
-<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4643">Упакуем так, чтобы керамика доехала целой, и отправим удобной вам службой доставки.</p>
-</div>
+<h2>Вещь, которая есть только у вас</h2>
+<p class="value-lead">Глазурь ложится по-своему в каждом обжиге: одна и та же рука не сделает двух одинаковых ваз. Поэтому мы не выпускаем серий — только отдельные работы.</p>
+<div class="advg">
+<div class="glass"><h3>Ручная лепка</h3><p>Без форм и тиража: каждую вещь мастер ведёт от куска глины до обжига.</p></div>
+<div class="glass"><h3>Живая глазурь</h3><p>Рисунок, цвет и блеск складываются в печи и не повторяются.</p></div>
+<div class="glass"><h3>Один экземпляр</h3><p>Работа существует в единственном числе и после покупки остаётся только у вас.</p></div>
+<div class="glass"><h3>Бережная доставка</h3><p>Упаковываем так, чтобы керамика доехала целой.</p></div>
 </div>
 </div>
 </section>
 
-<!-- Финальный экран -->
-<section id="contacts" class="wrap" style="padding-top: 140px">
-<div class="cols" style="justify-content: space-between; align-items: flex-end; gap: 40px">
-<div style="display: flex; flex-direction: column; gap: 24px; max-width: 520px">
-<p style="margin: 0; font-size: clamp(26px, 2.8vw, 38px); line-height: 1.2; letter-spacing: -0.03em">Понравилась работа? Напишите — расскажем о ней подробнее.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a class="btn btn-fill" href="#contacts">Написать в Telegram <span aria-hidden="true">→</span></a>
-<a class="btn btn-line" href="#contacts">WhatsApp</a>
+<section id="order">
+<div class="wrap">
+<h2>Как заказать</h2>
+<div class="steps">
+<div class="glass"><span class="num">01</span><h3>Выберите работу</h3><p>Посмотрите коллекцию и напишите название или номер вещи, которая откликнулась.</p></div>
+<div class="glass"><span class="num">02</span><h3>Обсудите детали</h3><p>Пришлём дополнительные фото и размеры, ответим на вопросы. Можно заказать работу по мотивам.</p></div>
+<div class="glass"><span class="num">03</span><h3>Получите заказ</h3><p>Упакуем и отправим удобной вам службой доставки.</p></div>
 </div>
 </div>
-<div style="display: flex; flex-direction: column; gap: 8px; font-size: 15px; color: #4A4643; text-align: right">
-<span>[телефон]</span>
-<span>[e-mail]</span>
-<span>[город, доставка по России]</span>
-</div>
-</div>
-<div style="height: 120px"></div>
 </section>
 
-<footer style="background: #22201E; color: #CFC9C3; position: relative; z-index: 2">
-<div class="wrap" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 28px; padding-bottom: 28px; font-size: 13px">
-<span>© 2026 · Керамика ручной работы</span>
-<span>Каждая работа — в единственном экземпляре</span>
+<section id="contacts" class="contact">
+<div class="wrap">
+<h2>Понравилась работа?</h2>
+<p class="lead">Напишите — расскажем о ней подробнее, пришлём больше фотографий и договоримся о доставке.</p>
+<div class="ways">
+<div class="glass"><small>Telegram</small><span class="v">[@ваш_ник]</span></div>
+<div class="glass"><small>Телефон</small><span class="v">[+7 000 000-00-00]</span></div>
+<div class="glass"><small>Email</small><span class="v">[почта@example.com]</span></div>
 </div>
-</footer>
+<a class="btn" href="#contacts">Написать в Telegram <span aria-hidden="true">→</span></a>
+<div class="foot"><span>© 2026 M Ceramics</span><span>Каждая работа — в единственном экземпляре</span></div>
+</div>
+</section>
 
+</main>
 </div>
 </body>
 </html>
